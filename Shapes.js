@@ -48,6 +48,7 @@ const shapeData = {
 };
 
 const draw = SVG('drawing').size(700, 700);
+
 for (const shapeName in shapeData) {
     const shapeDef = shapeData[shapeName];
     console.log(shapeDef);
@@ -61,4 +62,6 @@ for (const shapeName in shapeData) {
             break;
     }
     shape.center(shapeDef.centre.x, shapeDef.centre.y).attr({fill: shapeDef.colour});
+    const ring = draw.circle(175).attr({fill: 'none', stroke: 'purple', 'stroke-width': 10});
+    ring.animate().center(200, 200);
 }
