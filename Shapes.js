@@ -61,7 +61,11 @@ for (const shapeName in shapeData) {
             shape = draw.circle(shapeDef.size.radius);
             break;
     }
+    draw.circle();
     shape.center(shapeDef.centre.x, shapeDef.centre.y).attr({fill: shapeDef.colour});
-    const ring = draw.circle(175).attr({fill: 'none', stroke: 'purple', 'stroke-width': 10});
-    ring.animate().center(200, 200);
 }
+
+
+const ring = draw.circle(180).attr({fill: 'yellow', 'fill-opacity': '0.5', stroke: 'purple', 'stroke-width': 10});
+
+ring.animate().move(500, 500).loop(true, true);
